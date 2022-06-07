@@ -55,9 +55,6 @@ default public boolean canPickUp(Entity e, Player player){
 }
 ```
 
-TODO:
-https://gitlab.cse.unsw.edu.au/COMP2511/22T2/content/-/blob/master/lecture-slides/week02/pdfs/OOP_inJava_Poly_Rest.pdf
-
 # Tutorial
 **Activity A**
 
