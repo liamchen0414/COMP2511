@@ -9,6 +9,17 @@ import java.util.List;
  *
  */
 public class OnlineSeminar extends Seminar {
+    // Liskov Substitution Principle
+    // we want to use run time polymophism
+    // classic example is we have rectangle and square
+
+    
+    // S - Single-responsiblity Principle.
+    // O - Open-closed Principle.
+    // L - Liskov Substitution Principle: 
+    // whereever you are using the base type, you should be able to swap it with subtype
+    // I - Interface Segregation Principle.
+    // D - Dependency Inversion Principle.
     private String videoURL;
 
     private List<String> watched;
