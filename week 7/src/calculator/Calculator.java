@@ -1,18 +1,18 @@
-// package calculator;
+package calculator;
 
-// public class Calculator {
+public class Calculator {
 
-//     private Expression expression;
+    private Expression expression;
 
-//     public Calculator(Expression expression) {
-//         this.expression = expression;
-//     }
+    public Calculator(Expression expression) {
+        this.expression = expression;
+    }
 
-//     /**
-//      * @return computed expression
-//      */
-//     public double calculate() {
-//         return expression.compute();
-//     }
+    /**
+     * @return computed expression
+     */
+    public double calculate() {
+        return expression.compute();
+    }
 
-// }
+}
