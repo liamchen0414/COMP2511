@@ -27,7 +27,6 @@ public class Stack<E> implements Iterable<E> {
     public E pop() {
         E element = peek();
         list.remove(list.size() - 1);
-        // list.remove(element); this line has problem why?
         return element;
     }
 
@@ -35,35 +34,44 @@ public class Stack<E> implements Iterable<E> {
      * Returns the top element of the stack, without removing it.
      */
     public E peek() {
-        return list.get(list.size()-1);
+        return list.get(list.size() - 1);
     }
 
     /**
      * Returns an iterator to the internal data structure of the stack.
      */
     public Iterator<E> iterator() {
-        return null;
+        ArrayList<E> copy = new ArrayList<>(list);
+        Collections.reverse(copy);
+        return copy.iterator();
     }
 
     /**
      * Returns the size of the stack.
      */
     public int size() {
-        return 0;
+        return list.size();
     }
     
     /**
      * Returns the stack as an ArrayList
      */
     public ArrayList<E> toArrayList() {
-        return null;
+        ArrayList<E> copy = new ArrayList<>(list);
+        return copy;
     }
 
     public static Integer sumStack(Stack<? extends Integer> stack) {
-        return 0;
+        int res = 0;
+        for(Integer i : stack){
+            res += i;
+        }
+        return res;
     }
 
-    public static void prettyPrint(Stack<?> stack) {}
+    public static void prettyPrint(Stack<?> stack) {
+        // TODO:
+    }
         
 
     public static void main(String[] args) {

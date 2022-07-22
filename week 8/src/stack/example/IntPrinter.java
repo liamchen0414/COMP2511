@@ -1,6 +1,8 @@
 package stack.example;
 
-public class IntPrinter<T> {
+import java.util.Iterator;
+
+public class IntPrinter<T>  implements Iterable{
     private T num;
 
     public IntPrinter(T num){
@@ -9,5 +11,11 @@ public class IntPrinter<T> {
 
     public void print(){
         System.out.println(num);
+    }
+
+    @Override
+    public Iterator iterator() {
+        // TODO Auto-generated method stub
+        return null;
     }
 }

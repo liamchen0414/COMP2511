@@ -14,7 +14,25 @@ Implement the methods so that the tests pass, using an `ArrayList` to store the 
 The iterable interface is simply just something that can be iterated over. 
 
 3. When completing `toArrayList`, why do we need to make a copy rather than just returning our internal ArrayList?
+Because we want to keep our encapsulation intact, if we return the abstract data structure itself, then what's the point of stack wrapper?
+
 4. What does the `.iterator()` method allow us to do? Discuss the test inside `StackTest.java`.
+
+```java
+public interface Iterable<T>
+{
+    Iterator<T> iterator();
+}
+
+public interface Iterator<E>
+{
+    boolean hasNext();
+    E next();
+    void remove();
+}
+
+
+```
 
 ### Part 2 - Utility Functions & Iterators
 
@@ -99,6 +117,32 @@ Tokyo is leaving the bank, the balance is -1
 ```
 
 Use the Singleton Pattern to ensure that only one person can access the bank at a time. You can assume for simplicity's sake that only one access to *any* bank account can ever be made at a given time.
+
+```java
+public class Singleton {
+    private static Singleton instance;
+    private String data;
+
+    // make the default constructor private, to prevent other objects from using the new operator with the Singleton Class
+    private Singleton(String data){
+        this.data = data;
+    }
+
+    // create a static creation method
+    public static Singleton getInstance(String data){
+        // only one thread can enter the block
+        if(instance == null){
+            synchronized(Singleton.class){ // try to retrieve the key, if key is held by someone else, sleep
+                if(instance == null){
+                    instance = new Singleton(data);
+                }
+            }
+        }
+        return instance;
+    }
+}
+
+```
 
 
 ## C. Refactoring to Patterns
